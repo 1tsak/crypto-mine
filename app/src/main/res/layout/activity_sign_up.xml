@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    tools:context=".SignUpActivity">
+
+
+    <TextView
+        android:id="@+id/welcometxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_color"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textColorHint="@color/primary_color"
+        android:text="Sign Up"
+        android:textSize="22sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/nameCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcometxtView"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="35dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="3dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/namefield"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/primary_color"
+            android:textColorHint="@color/primary_color"
+            android:background="@android:color/transparent"
+            android:hint="Name"
+            android:inputType="text" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/phoneNumberfieldCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameCont"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="35dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="3dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneNumberfield"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_baseline_phone_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/primary_color"
+            android:textColorHint="@color/primary_color"
+            android:background="@android:color/transparent"
+            android:hint="Phone Number"
+            android:inputType="phone" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/emailfieldCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phoneNumberfieldCont"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="35dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="3dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailfield"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/primary_color"
+            android:textColorHint="@color/primary_color"
+            android:background="@android:color/transparent"
+            android:hint="Email"
+            android:inputType="text" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/paswdfieldCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailfieldCont"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="35dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="3dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwdfield"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableLeft="@drawable/ic_baseline_paswd_eye_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/primary_color"
+            android:textColorHint="@color/primary_color"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Enter Password" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rptpswdCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/paswdfieldCont"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="35dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="3dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/rptpswdfield"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:drawableLeft="@drawable/ic_baseline_paswd_eye_24"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/primary_color"
+            android:textColorHint="@color/primary_color"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Repeat Password" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/signupbtn"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/rptpswdCont"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="25dp"
+        app:cardBackgroundColor="@color/primary_color"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/dont_have_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/logintxt"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/primary_color"
+        android:text="Already have an account?"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/logintxt"
+        android:layout_width="wrap_content"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:text="Log In"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:elevation="3dp"
+        android:layout_width="50dp"
+        android:visibility="gone"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

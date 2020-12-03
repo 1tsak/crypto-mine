@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Bidding</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contest_played">Contest Played</string>
+    <string name="bids_won">Bids Won</string>
+    <string name="playcoin_won">Money Won</string>
+    <string name="my_profile">My Profile</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="logout">Log Out</string>
+    <string name="Withrawl_Note">Note :- Withdrawn Amount Will Take 24 Hrs To Process And Reflect In Your Bank Accounty.</string>
+</resources>
