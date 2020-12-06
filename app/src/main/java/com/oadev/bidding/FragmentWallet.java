@@ -2,14 +2,13 @@ package com.oadev.bidding;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.cardview.widget.CardView;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 
 
 public class FragmentWallet extends Fragment {
@@ -33,13 +32,13 @@ public class FragmentWallet extends Fragment {
         addmoney.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getActivity(),AddMoneyActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), AddMoneyActivity.class));
             }
         });
         view.findViewById(R.id.withdrawButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"Bad Response, Api Error",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Bad Response, Api Error", Toast.LENGTH_LONG).show();
             }
         });
         return view;

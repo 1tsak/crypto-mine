@@ -2,10 +2,13 @@ package com.oadev.bidding;
 
 public class User {
 
-    private int id;
-    private String username, email, amount,phone;
+    private final int id;
+    private final String username;
+    private final String email;
+    private final String amount;
+    private final String phone;
 
-    public User(int id, String username, String email, String amount,String phone) {
+    public User(int id, String username, String email, String amount, String phone) {
         this.id = id;
         this.username = username;
         this.email = email;

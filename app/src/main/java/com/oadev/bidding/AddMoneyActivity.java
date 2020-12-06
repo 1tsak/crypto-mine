@@ -29,7 +29,7 @@ public class AddMoneyActivity extends AppCompatActivity {
     EditText amountfield;
     ProgressBar progressBar;
     String orderIdString;
-    private Integer ActivityRequestCode = 2;
+    private final Integer ActivityRequestCode = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +116,7 @@ public class AddMoneyActivity extends AppCompatActivity {
 
             @Override
             public void onErrorProceed(String s) {
-                Log.e("paytm", " onErrorProcess " + s.toString());
+                Log.e("paytm", " onErrorProcess " + s);
             }
 
             @Override
@@ -180,6 +180,6 @@ public class AddMoneyActivity extends AppCompatActivity {
         Random rand = new Random();
         int min = 1000, max = 9999;
         int randomNum = rand.nextInt((max - min) + 1) + min;
-        return date + String.valueOf(randomNum);
+        return date + randomNum;
     }
 }

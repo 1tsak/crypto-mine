@@ -1,16 +1,15 @@
 package com.oadev.bidding;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,19 +17,15 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.firebase.auth.PhoneAuthOptions;
-import com.google.firebase.auth.PhoneAuthProvider;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.concurrent.TimeUnit;
-
 public class LoginActivity extends AppCompatActivity {
-    EditText phoneEditText,passwdEditText;
+    EditText phoneEditText, passwdEditText;
     CardView Login;
     TextView signup;
-    String phoneNumber,password;
+    String phoneNumber, password;
     ProgressBar progressBar;
 
     @Override
@@ -48,19 +43,19 @@ public class LoginActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!phoneEditText.getText().toString().isEmpty()&& !passwdEditText.getText().toString().isEmpty()) {
+                if (!phoneEditText.getText().toString().isEmpty() && !passwdEditText.getText().toString().isEmpty()) {
                     phoneNumber = phoneEditText.getText().toString();
                     password = passwdEditText.getText().toString();
                     progressBar.setVisibility(View.VISIBLE);
-                    doLogin(phoneNumber,password);
+                    doLogin(phoneNumber, password);
 
 //                    Intent intent = new Intent(LoginActivity.this, PhoneAuthActivity.class);
 //                    intent.putExtra("action", "login");
 //                    intent.putExtra("phoneNumber", phoneNumber);
 //                    intent.putExtra("password", password);
 //                    startActivity(intent);
-                }else{
-                    Toast.makeText(LoginActivity.this,"Invalid Credentials!",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Invalid Credentials!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -68,12 +63,12 @@ public class LoginActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
             }
         });
     }
 
-    private void doLogin(String phone , String password) {
+    private void doLogin(String phone, String password) {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
 

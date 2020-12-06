@@ -43,7 +43,7 @@ public class PrefManager {
         editor.putString(KEY_USERNAME, user.getUsername());
         editor.putString(KEY_EMAIL, user.getEmail());
         editor.putString(KEY_AMOUNT, user.getAmount());
-        editor.putString(KEY_PHONE,user.getPhone());
+        editor.putString(KEY_PHONE, user.getPhone());
         editor.apply();
     }
 
@@ -61,7 +61,7 @@ public class PrefManager {
                 sharedPreferences.getString(KEY_USERNAME, null),
                 sharedPreferences.getString(KEY_EMAIL, null),
                 sharedPreferences.getString(KEY_AMOUNT, null),
-                sharedPreferences.getString(KEY_PHONE,null)
+                sharedPreferences.getString(KEY_PHONE, null)
         );
     }
 

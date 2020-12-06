@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PaytmServiceWrapper {
 
-    private PaytmApi mServiceInterface;
+    private final PaytmApi mServiceInterface;
 
     public PaytmServiceWrapper(Interceptor mInterceptorheader) {
         mServiceInterface = getRetrofit(mInterceptorheader).create(PaytmApi.class);
@@ -31,7 +31,7 @@ public class PaytmServiceWrapper {
         builder.connectTimeout(1201, TimeUnit.SECONDS);
         builder.readTimeout(901, TimeUnit.SECONDS);
 
-      if (BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG) {
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             builder.addInterceptor(loggingInterceptor);
         }
@@ -51,10 +51,11 @@ public class PaytmServiceWrapper {
                 convertPlainString(code), convertPlainString(mid), convertPlainString(order_id)
                 , convertPlainString(amount));
     }
+
     // convert aa param into plain text
-    public RequestBody convertPlainString(String data){
+    public RequestBody convertPlainString(String data) {
         RequestBody plainString = RequestBody.create(MediaType.parse("text/plain"), data);
-        return  plainString;
+        return plainString;
     }
 
 }

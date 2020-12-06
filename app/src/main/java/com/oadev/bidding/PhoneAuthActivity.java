@@ -34,18 +34,18 @@ import java.util.concurrent.TimeUnit;
 
 public class PhoneAuthActivity extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
-    private boolean mVerificationInProgress = false;
-    private String mVerificationId;
-    private PhoneAuthProvider.ForceResendingToken mResendToken;
-    private String phoneNumber;
     String code;
     EditText otpEdittext;
     CardView Verify;
     Intent intent;
     String action;
     ImageButton back;
+    private FirebaseAuth mAuth;
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
+    private final boolean mVerificationInProgress = false;
+    private String mVerificationId;
+    private PhoneAuthProvider.ForceResendingToken mResendToken;
+    private String phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +100,7 @@ public class PhoneAuthActivity extends AppCompatActivity {
         Verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(PhoneAuthActivity.this,otpEdittext.getText().toString(),Toast.LENGTH_LONG).show();
+                Toast.makeText(PhoneAuthActivity.this, otpEdittext.getText().toString(), Toast.LENGTH_LONG).show();
                 verifyCode(otpEdittext.getText().toString());
             }
         });
@@ -180,7 +180,6 @@ public class PhoneAuthActivity extends AppCompatActivity {
                                 startActivity(new Intent(PhoneAuthActivity.this, LoginActivity.class));
                             } else
                                 Toast.makeText(PhoneAuthActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
-                            ;
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

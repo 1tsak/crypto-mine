@@ -1,14 +1,13 @@
 package com.oadev.bidding;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 public class FragmentProfile extends Fragment {
 
@@ -34,19 +33,19 @@ public class FragmentProfile extends Fragment {
         view.findViewById(R.id.profileCard).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"Bad Response, Api Error",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Bad Response, Api Error", Toast.LENGTH_LONG).show();
             }
         });
         view.findViewById(R.id.myWalletCard).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"Bad Response, Api Error",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Bad Response, Api Error", Toast.LENGTH_LONG).show();
             }
         });
         view.findViewById(R.id.logcard).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"Bad Response, Api Error",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Bad Response, Api Error", Toast.LENGTH_LONG).show();
             }
         });
         return view;

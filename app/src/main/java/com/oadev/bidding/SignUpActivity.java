@@ -31,6 +31,13 @@ public class SignUpActivity extends AppCompatActivity {
     String name, phoneNumber, email, password, rptpassword;
     ProgressBar progressBar;
 
+    public static boolean isEmailValid(String email) {
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,15 +61,15 @@ public class SignUpActivity extends AppCompatActivity {
                 email = emailEditText.getText().toString();
                 password = passwordEditText.getText().toString();
                 rptpassword = rptpasswordEditText.getText().toString();
-                if (name.matches("")&&phoneNumber.matches("")&&email.matches("")&&password.matches("")&&rptpassword.matches("")){
+                if (name.matches("") && phoneNumber.matches("") && email.matches("") && password.matches("") && rptpassword.matches("")) {
 
-                    Toast.makeText(SignUpActivity.this,"Please Fill All Required Fields!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignUpActivity.this, "Please Fill All Required Fields!", Toast.LENGTH_LONG).show();
 
-                }else{
-                    if (rptpassword.equals(password)){
+                } else {
+                    if (rptpassword.equals(password)) {
                         if (isEmailValid(email)) {
                             progressBar.setVisibility(View.VISIBLE);
-                            doSignup(name,phoneNumber,email,password);
+                            doSignup(name, phoneNumber, email, password);
 
 //                            Intent intent = new Intent(SignUpActivity.this, PhoneAuthActivity.class);
 //                            intent.putExtra("action", "signup");
@@ -71,12 +78,12 @@ public class SignUpActivity extends AppCompatActivity {
 //                            intent.putExtra("email", name);
 //                            intent.putExtra("password", name);
 //                            startActivity(intent);
-                        }else{
-                            Toast.makeText(SignUpActivity.this,"Invalid Email!",Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(SignUpActivity.this, "Invalid Email!", Toast.LENGTH_LONG).show();
                         }
 
-                    }else{
-                        Toast.makeText(SignUpActivity.this,"Passwords do not Match!",Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(SignUpActivity.this, "Passwords do not Match!", Toast.LENGTH_LONG).show();
                     }
 
                 }
@@ -85,20 +92,14 @@ public class SignUpActivity extends AppCompatActivity {
         logintxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignUpActivity.this,LoginActivity.class));
+                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
             }
         });
 
 
     }
-    public static boolean isEmailValid(String email) {
-        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(email);
-        return matcher.matches();
-    }
 
-    private void doSignup(String name,String phone,String email,String password) {
+    private void doSignup(String name, String phone, String email, String password) {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.signupUrl + "name=" + name + "&phone=" + phone + "&email=" + email + "&password=" + password,
@@ -115,7 +116,6 @@ public class SignUpActivity extends AppCompatActivity {
                                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                             } else
                                 Toast.makeText(SignUpActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
-                            ;
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

@@ -28,6 +28,7 @@ public class Token_Res {
     public void setBody(Body body) {
         this.body = body;
     }
+
     public class ResultInfo {
 
         @SerializedName("resultStatus")
@@ -65,6 +66,7 @@ public class Token_Res {
         }
 
     }
+
     public class Head {
 
         @SerializedName("responseTimestamp")
