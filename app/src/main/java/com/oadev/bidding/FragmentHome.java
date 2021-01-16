@@ -34,21 +34,21 @@ public class FragmentHome extends Fragment {
         green.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ((MainActivity) getActivity()).showGreenBidConfirmDialog();
             }
         });
 
         violet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ((MainActivity) getActivity()).showVioletBidConfirmDialog();
             }
         });
 
         red.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ((MainActivity) getActivity()).showRedBidConfirmDialog();
             }
         });
 
@@ -140,4 +140,5 @@ public class FragmentHome extends Fragment {
         num8 = view.findViewById(R.id.btnmbr8);
         num9 = view.findViewById(R.id.btnmbr9);
     }
+
 }

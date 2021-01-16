@@ -7,12 +7,32 @@
     android:background="@color/bg_color"
     tools:context=".FragmentHome">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/balance_bg"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="25dp"
+        app:cardBackgroundColor="#F44336"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="3dp"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="42sp"
+            android:textColor="@color/white_80"
+            android:text="₹ 2500"/>
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardBackgroundColor="#333639"
+        android:layout_below="@id/balance_bg"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/gray_dark"
         app:cardCornerRadius="@dimen/dimen_10dp"
         app:cardElevation="@dimen/dimen_3dp">
 
@@ -97,7 +117,7 @@
                     android:layout_height="60dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#4CAF50"
+                    android:backgroundTint="@color/light_green"
                     android:text="JOIN GREEN"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
@@ -108,7 +128,7 @@
                     android:layout_height="60dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#673AB7"
+                    android:backgroundTint="@color/violet"
                     android:text="JOIN VIOLET"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
@@ -119,7 +139,7 @@
                     android:layout_height="60dp"
                     android:layout_margin="2dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#F44336"
+                    android:backgroundTint="@color/red"
                     android:text="JOIN RED"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
@@ -267,18 +287,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/numberslot3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/numberslot2"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginRight="15dp"
-                android:weightSum="4">
-
-
-            </LinearLayout>
 
         </RelativeLayout>
 

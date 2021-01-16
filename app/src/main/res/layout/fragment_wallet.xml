@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_color"
     tools:context=".FragmentWallet">
 
     <!-- TODO: Update blank fragment layout -->
@@ -14,6 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         android:text="Wallet"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -33,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tittletxt"
             android:text="₹"
+            android:textColor="@color/white"
             android:textSize="72sp" />
 
         <TextView
@@ -44,6 +47,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
             android:text="0.00"
+            android:textColor="@color/white"
             android:textSize="72sp"
             android:textStyle="bold" />
 
@@ -67,7 +71,7 @@
             android:layout_height="50dp"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            app:cardBackgroundColor="#E57373"
+            app:cardBackgroundColor="@color/light_green"
             app:cardCornerRadius="25dp"
             app:cardElevation="2dp">
 
@@ -108,7 +112,7 @@
         android:layout_height="2.5dp"
         android:layout_below="@id/action_cont"
         android:layout_marginTop="10dp"
-        android:background="#E3E3E3" />
+        android:background="@color/gray_dark" />
 
     <TextView
         android:id="@+id/secondTittle"
@@ -117,6 +121,7 @@
         android:layout_below="@id/action_cont"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
+        android:textColor="@color/white_80"
         android:text="Transaction History"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -126,11 +131,12 @@
         android:layout_height="2.5dp"
         android:layout_marginTop="15dp"
         android:layout_below="@id/secondTittle"
-        android:background="#E3E3E3" />
+        android:background="@color/gray_dark" />
 
     <TextView
         android:id="@+id/no_transactions"
         android:layout_width="wrap_content"
+        android:textColor="@color/white_80"
         android:layout_height="wrap_content"
         android:layout_below="@id/action_cont"
         android:layout_centerHorizontal="true"

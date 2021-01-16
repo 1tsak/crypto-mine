@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_dark">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/red"
+        android:id="@+id/top_bar"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="JOIN RED"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTRACT MONEY"
+        android:layout_below="@id/top_bar"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:id="@+id/contract_moneyTxt"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:id="@+id/contract_amount_conT"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/contract_moneyTxt"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/contract_tenRs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:layout_weight="1"
+            android:backgroundTint="@color/primary_color"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_margin="5dp"/>
+        <Button
+            android:id="@+id/contract_hundredRs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bg_color"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_margin="5dp"/>
+        <Button
+            android:id="@+id/contract_ThousandRs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1000"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bg_color"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CONTRACT COUNT"
+        android:layout_below="@id/contract_amount_conT"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:id="@+id/contract_count_"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:id="@+id/contract_No_conT"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/contract_count_">
+
+        <ImageButton
+            android:id="@+id/decrease_count"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_baseline_remove_24"
+            android:backgroundTint="@color/light_blue"
+            android:tint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/contract_count_Txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:backgroundTint="@color/gray_dark"
+            android:textColor="@color/white"
+            android:textSize="42sp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"/>
+        <ImageButton
+            android:id="@+id/increase_count"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dimen_60dp"
+            android:src="@drawable/ic_baseline_add_24"
+            android:tint="@color/white"
+            android:backgroundTint="@color/primary_color"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOTAL CONTRACT MONEY = 10"
+        android:layout_below="@id/contract_No_conT"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="20dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:id="@+id/TotalContractMoneyTxt"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:id="@+id/confirm_cancel_cont"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:layout_below="@id/TotalContractMoneyTxt">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:text="Cancel"
+            android:backgroundTint="@color/primary_color"
+            android:tint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:text="Confirm"
+            android:backgroundTint="@color/light_green"
+            android:tint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginLeft="10dp"
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+    
+</RelativeLayout>
