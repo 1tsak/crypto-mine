@@ -1,4 +1,4 @@
-package com.oadev.bidding;
+package com.oadev.mining;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;

@@ -4,288 +4,210 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color"
+    android:background="@color/white"
     tools:context=".FragmentHome">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/balance_bg"
+    <LinearLayout
+        android:id="@+id/appbarlyt"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_margin="25dp"
-        app:cardBackgroundColor="#F44336"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="3dp"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="42sp"
-            android:textColor="@color/white_80"
-            android:text="₹ 2500"/>
-    </androidx.cardview.widget.CardView>
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:text="@string/app_name"
+            android:textColor="@color/gray_dark"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:tint="@color/gray_dark"
+            android:src="@drawable/ic_baseline_support_agent_24"
+            android:background="@color/none" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:tint="@color/gray_dark"
+            android:src="@drawable/ic_baseline_notifications_24"
+            android:background="@color/none" />
+    </LinearLayout>
+
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/balance_bg"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="@color/gray_dark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_below="@id/appbarlyt"
+        android:layout_marginBottom="-25dp"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/dimen_10dp"
-        app:cardElevation="@dimen/dimen_3dp">
+        app:cardElevation="10dp">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="5dp">
 
-
-            <TextView
-                android:id="@+id/actv_contsttxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_margin="10dp"
-                android:text="Active Contest"
-                android:textColor="@color/primary_color"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <View
-                android:id="@+id/seperator_2"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_below="@id/actv_contsttxt"
-                android:layout_marginTop="5dp"
-                android:background="@color/primary_color" />
-
-            <TextView
-                android:id="@+id/counttxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/seperator_2"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:drawableLeft="@drawable/ic_baseline_info_24"
-                android:drawablePadding="2dp"
-                android:drawableTint="@color/white"
-                android:text="0000000"
-                android:textColor="@color/white_80"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/periodidtxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/seperator_2"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:drawableLeft="@drawable/ic_baseline_timer_24"
-                android:drawablePadding="2dp"
-                android:drawableTint="@color/white"
-                android:text="3:00 min"
-                android:textColor="@color/white_80"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/colorbidtxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/counttxt"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:text="Colour Bid"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
             <LinearLayout
-                android:id="@+id/colorbidcont"
+                android:id="@+id/mine_timer_cont"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/colorbidtxt"
+                android:layout_marginTop="25dp"
                 android:gravity="center"
-                android:weightSum="3">
+                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/greenbtn"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_margin="2dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/light_green"
-                    android:text="JOIN GREEN"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/mine_timertxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.02"
+                    android:text="Mining Will Stop After"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/violetbtn"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_margin="2dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/violet"
-                    android:text="JOIN VIOLET"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
-                <Button
-                    android:id="@+id/redbtn"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_margin="2dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/red"
-                    android:text="JOIN RED"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
+                <TextView
+                    android:id="@+id/mine_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="casual"
+                    android:paddingLeft="5dp"
+                    android:text="24:00:00"
+                    android:textColor="@color/light_blue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/numberbidtxt"
+
+            <RelativeLayout
+                android:id="@+id/start_mine"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@id/mine_timer_cont"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/circular_btn_outside"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:layout_width="160dp"
+                    android:backgroundTint="#ABE48800"
+                    android:layout_height="160dp"
+                    android:background="@drawable/circular_button_inside">
+
+                    <ImageView
+                        android:id="@+id/mineIcon"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="25dp"
+                        android:src="@drawable/ic_pickaxe"
+                        app:tint="@color/gray_dark" />
+
+                    <TextView
+                        android:id="@+id/available_coin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/mineIcon"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:text="100.5421"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/available_coin"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="5dp"
+                        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+                        android:drawablePadding="2dp"
+                        android:drawableTint="@color/black"
+                        android:text="1/2"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/start_mine"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="@dimen/dimen_10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/dimen_10dp"
+                app:cardElevation="@dimen/dimen_3dp">
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/referal_lyt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/colorbidcont"
+                android:layout_below="@id/start_mine"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Number Bid"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_marginTop="25sp"
+                android:layout_marginRight="@dimen/dimen_10dp"
+                app:cardBackgroundColor="@color/white_smoke"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="@dimen/dimen_10dp">
 
-            <LinearLayout
-                android:id="@+id/numberslot1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/numberbidtxt"
-                android:weightSum="5">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/btnmbr0"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="0"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/ref_info"
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="25dp"
+                        android:layout_height="wrap_content"
+                        android:text="Earn extra 25% /active miner in your team"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/start_refer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="25dp"
+                        android:layout_marginBottom="25dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/ref_info">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start Refering"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/black_222222"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"/>
 
-                <Button
-                    android:id="@+id/btnmbr1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="1"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/btnmbr2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="2"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/btnmbr3"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="3"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/btnmbr4"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="4"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/numberslot2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/numberslot1"
-                android:weightSum="5">
-
-
-                <Button
-                    android:id="@+id/btnmbr5"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="5"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/btnmbr6"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="6"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/btnmbr7"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="7"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/btnmbr8"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="8"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/btnmbr9"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/bg_color"
-                    android:text="9"
-                    android:textColor="@color/white_80"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
 
         </RelativeLayout>

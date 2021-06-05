@@ -1,4 +1,4 @@
-package com.oadev.bidding;
+package com.oadev.mining;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.oadev.bidding", appContext.getPackageName());
+        assertEquals("com.oadev.mining", appContext.getPackageName());
     }
 }

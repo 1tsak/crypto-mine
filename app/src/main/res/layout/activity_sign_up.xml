@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_color"
+    android:background="@color/white"
     tools:context=".SignUpActivity">
 
 
@@ -12,10 +12,10 @@
         android:id="@+id/welcometxtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/primary_color"
+        android:textColor="@color/main_color"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:textColorHint="@color/primary_color"
+        android:textColorHint="@color/main_color"
         android:text="Sign Up"
         android:textSize="22sp" />
 
@@ -37,8 +37,8 @@
             android:layout_margin="10dp"
             android:drawableLeft="@drawable/ic_baseline_account_circle_24"
             android:drawablePadding="10dp"
-            android:drawableTint="@color/primary_color"
-            android:textColorHint="@color/primary_color"
+            android:drawableTint="@color/main_color"
+            android:textColorHint="@color/main_color"
             android:background="@android:color/transparent"
             android:hint="Name"
             android:inputType="text" />
@@ -61,8 +61,8 @@
             android:layout_margin="10dp"
             android:drawableLeft="@drawable/ic_baseline_phone_24"
             android:drawablePadding="10dp"
-            android:drawableTint="@color/primary_color"
-            android:textColorHint="@color/primary_color"
+            android:drawableTint="@color/main_color"
+            android:textColorHint="@color/main_color"
             android:background="@android:color/transparent"
             android:hint="Phone Number"
             android:inputType="phone" />
@@ -85,8 +85,8 @@
             android:layout_margin="10dp"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="10dp"
-            android:drawableTint="@color/primary_color"
-            android:textColorHint="@color/primary_color"
+            android:drawableTint="@color/main_color"
+            android:textColorHint="@color/main_color"
             android:background="@android:color/transparent"
             android:hint="Email"
             android:inputType="text" />
@@ -109,8 +109,8 @@
             android:layout_height="30dp"
             android:drawableLeft="@drawable/ic_baseline_paswd_eye_24"
             android:drawablePadding="10dp"
-            android:drawableTint="@color/primary_color"
-            android:textColorHint="@color/primary_color"
+            android:drawableTint="@color/main_color"
+            android:textColorHint="@color/main_color"
             android:layout_margin="10dp"
             android:background="@android:color/transparent"
             android:hint="Enter Password" />
@@ -132,8 +132,8 @@
             android:layout_height="30dp"
             android:drawableLeft="@drawable/ic_baseline_paswd_eye_24"
             android:drawablePadding="10dp"
-            android:drawableTint="@color/primary_color"
-            android:textColorHint="@color/primary_color"
+            android:drawableTint="@color/main_color"
+            android:textColorHint="@color/main_color"
             android:layout_margin="10dp"
             android:background="@android:color/transparent"
             android:hint="Repeat Password" />
@@ -147,7 +147,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="50dp"
         android:layout_marginRight="25dp"
-        app:cardBackgroundColor="@color/primary_color"
+        app:cardBackgroundColor="@color/main_color"
         app:cardCornerRadius="25dp"
         app:cardElevation="5dp">
 
@@ -167,14 +167,14 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/logintxt"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/primary_color"
+        android:textColor="@color/main_color"
         android:text="Already have an account?"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/logintxt"
         android:layout_width="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/gray_dark"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

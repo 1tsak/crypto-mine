@@ -1,4 +1,4 @@
-package com.oadev.bidding;
+package com.oadev.mining;
 
 import com.android.volley.BuildConfig;
 import com.google.gson.Gson;

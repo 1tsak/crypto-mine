@@ -1,4 +1,4 @@
-package com.oadev.bidding;
+package com.oadev.mining;
 
 import android.content.Context;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.oadev.bidding;
+package com.oadev.mining;
 
 public class Config {
     public static String BASE_URL = "https://bid.codebazar.in/bidding/";

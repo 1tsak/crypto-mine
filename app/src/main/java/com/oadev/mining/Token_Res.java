@@ -1,4 +1,4 @@
-package com.oadev.bidding;
+package com.oadev.mining;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:238128563554:android:585b4dc1c3a8c08db7583b",
         "android_client_info": {
-          "package_name": "com.oadev.bidding"
+          "package_name": "com.oadev.mining"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "238128563554-jtit0rvh9g6s96om6jjksdf15tivo997.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.oadev.bidding",
+            "package_name": "com.oadev.mining",
             "certificate_hash": "21492e00b984c9a3a19509febe2f67be05823bf4"
           }
         },
