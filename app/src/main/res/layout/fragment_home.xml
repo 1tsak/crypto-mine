@@ -4,68 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".FragmentHome">
 
-    <LinearLayout
-        android:id="@+id/appbarlyt"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimen_10dp"
-            android:text="@string/app_name"
-            android:textColor="@color/gray_dark"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:tint="@color/gray_dark"
-            android:src="@drawable/ic_baseline_support_agent_24"
-            android:background="@color/none" />
-
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:tint="@color/gray_dark"
-            android:src="@drawable/ic_baseline_notifications_24"
-            android:background="@color/none" />
-    </LinearLayout>
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="@dimen/dimen_10dp"
-        android:layout_below="@id/appbarlyt"
-        android:layout_marginBottom="-25dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="@dimen/dimen_10dp"
-        app:cardElevation="10dp">
-
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp">
+
+            android:background="@drawable/home_bg"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/appbarlyt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:fontFamily="@font/sn_sembold"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/none"
+                    android:src="@drawable/ic_baseline_support_agent_24"
+                    android:tint="@color/white" />
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@color/none"
+                    android:src="@drawable/ic_baseline_notifications_24"
+                    android:tint="@color/white" />
+            </LinearLayout>
+
 
             <LinearLayout
                 android:id="@+id/mine_timer_cont"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_below="@id/appbarlyt"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -73,17 +67,18 @@
                     android:id="@+id/mine_timertxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/sn_nl"
                     android:letterSpacing="0.02"
                     android:text="Mining Will Stop After"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/mine_timer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="casual"
-                    android:paddingLeft="5dp"
+                    android:fontFamily="@font/sn_regular"
+                    android:padding="10dp"
                     android:text="24:00:00"
                     android:textColor="@color/light_blue"
                     android:textSize="20sp"
@@ -92,27 +87,28 @@
 
 
             <RelativeLayout
-                android:id="@+id/start_mine"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:id="@+id/mine_balance"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
                 android:layout_below="@id/mine_timer_cont"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/circular_btn_outside"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circular_button_inside"
+                android:backgroundTint="@color/white"
                 android:gravity="center">
 
                 <RelativeLayout
-                    android:layout_width="160dp"
-                    android:backgroundTint="#ABE48800"
-                    android:layout_height="160dp"
-                    android:background="@drawable/circular_button_inside">
+                    android:layout_width="135dp"
+                    android:layout_height="135dp"
+                    android:background="@drawable/circular_bg"
+                    android:backgroundTint="@color/white">
 
                     <ImageView
                         android:id="@+id/mineIcon"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="20dp"
                         android:src="@drawable/ic_pickaxe"
                         app:tint="@color/gray_dark" />
 
@@ -122,10 +118,12 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/mineIcon"
                         android:layout_centerInParent="true"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/sn_bold"
+                        android:maxLength="8"
                         android:text="100.5421"
                         android:textColor="@color/black"
-                        android:textSize="18sp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -134,12 +132,14 @@
                         android:layout_below="@id/available_coin"
                         android:layout_centerInParent="true"
                         android:layout_marginTop="5dp"
-                        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
-                        android:drawablePadding="2dp"
-                        android:drawableTint="@color/black"
+                        android:drawableLeft="@drawable/ic_baseline_group_24"
+                        android:drawablePadding="5dp"
+                        android:drawableTint="@color/gray_dark"
+                        android:scaleX="0.8"
+                        android:scaleY="0.8"
                         android:text="1/2"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
+                        android:textColor="@color/gray_dark"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
 
 
@@ -147,16 +147,21 @@
             </RelativeLayout>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/start_mine"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="@dimen/dimen_10dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="@dimen/dimen_10dp"
-                app:cardElevation="@dimen/dimen_3dp">
+                android:id="@+id/start_mine"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/mine_balance"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                app:cardBackgroundColor="#FF3E3E"
+                app:cardCornerRadius="35dp">
 
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_pick"
+                    app:tint="@color/white" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -164,53 +169,99 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/start_mine"
+                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="25sp"
+                android:layout_marginTop="75dp"
                 android:layout_marginRight="@dimen/dimen_10dp"
                 app:cardBackgroundColor="@color/white_smoke"
-                android:layout_centerHorizontal="true"
-                app:cardCornerRadius="@dimen/dimen_10dp">
+                app:cardCornerRadius="@dimen/dimen_10dp"
+                app:cardUseCompatPadding="true">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_height="wrap_content">
+                    android:padding="5dp">
 
                     <TextView
                         android:id="@+id/ref_info"
                         android:layout_width="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_margin="25dp"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/sn_regular"
                         android:text="Earn extra 25% /active miner in your team"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
+
                     <androidx.cardview.widget.CardView
                         android:id="@+id/start_refer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:cardCornerRadius="25dp"
-                        android:layout_marginBottom="25dp"
+                        android:layout_below="@id/ref_info"
                         android:layout_centerHorizontal="true"
-                        android:layout_below="@id/ref_info">
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="25dp">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Start Refering"
-                            android:textStyle="bold"
-                            android:textSize="18sp"
-                            android:textColor="@color/black_222222"
+                            android:fontFamily="@font/sn_bold"
                             android:paddingLeft="15dp"
-                            android:paddingRight="15dp"
                             android:paddingTop="10dp"
-                            android:paddingBottom="10dp"/>
+                            android:paddingRight="15dp"
+                            android:paddingBottom="10dp"
+                            android:text="Start Refering"
+                            android:textColor="@color/black_222222"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
 
                     </androidx.cardview.widget.CardView>
+
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/chartLyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/referal_lyt"
+                android:layout_margin="25dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/chart" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/newstittletxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="News"
+                android:textColor="@color/black"
+                android:layout_below="@id/chartLyt"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/sn_bold"
+                android:textSize="20sp"/>
+
+            <RelativeLayout
+                android:id="@+id/newsCont"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_below="@id/newstittletxt">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/newsRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp" />
+
+            </RelativeLayout>
 
         </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
 </RelativeLayout>

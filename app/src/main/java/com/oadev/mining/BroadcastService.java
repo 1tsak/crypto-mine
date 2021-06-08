@@ -10,7 +10,7 @@ public class BroadcastService extends Service {
 
     private final static String TAG = "BroadcastService";
 
-    public static final String COUNTDOWN_BR = "com.oadev.mining.countdown_br";
+    public static final String COUNTDOWN_BR = "com.oadev.mining.receiver";
     Intent bi = new Intent(COUNTDOWN_BR);
 
     CountDownTimer cdt = null;

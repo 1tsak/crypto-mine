@@ -41,6 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:fontFamily="@font/sn_nl"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginBottom="10dp"
@@ -70,6 +71,7 @@
                     android:layout_margin="5dp"
                     android:paddingLeft="5dp"
                     android:text="Loading"
+                    android:fontFamily="@font/sn_bold"
                     android:textColor="@color/gray_dark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -79,7 +81,7 @@
                     android:layout_weight="1"/>
 
                 <ImageView
-                    android:id="@+id/copyRef"
+                    android:id="@+id/copyRefbtn"
                     android:layout_width="35dp"
                     android:layout_height="@dimen/dimen_35dp"
                     android:padding="4dp"
@@ -95,6 +97,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="0dp"
+                android:fontFamily="@font/sn_regular"
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="25dp"
                 android:text="Your friend will get 10 free NiN when joining NiN Network Community."
@@ -135,6 +138,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="25dp"
                 android:letterSpacing="0.01"
+                android:fontFamily="@font/sn_nl"
                 android:text="Terms &amp; conditions and Privacy policy ."
                 android:textColor="@color/black_222222"
 

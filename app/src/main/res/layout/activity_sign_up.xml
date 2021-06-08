@@ -12,11 +12,11 @@
         android:id="@+id/welcometxtView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/main_color"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
-        android:textColorHint="@color/main_color"
         android:text="Sign Up"
+        android:textColor="@color/main_color"
+        android:textColorHint="@color/main_color"
         android:textSize="22sp" />
 
     <androidx.cardview.widget.CardView
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/welcometxtView"
         android:layout_marginLeft="35dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="35dp"
         app:cardCornerRadius="25dp"
         app:cardElevation="3dp">
@@ -35,14 +35,15 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_margin="10dp"
+            android:background="@android:color/transparent"
             android:drawableLeft="@drawable/ic_baseline_account_circle_24"
             android:drawablePadding="10dp"
             android:drawableTint="@color/main_color"
-            android:textColorHint="@color/main_color"
-            android:background="@android:color/transparent"
             android:hint="Name"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColorHint="@color/main_color" />
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/phoneNumberfieldCont"
         android:layout_width="match_parent"
@@ -59,14 +60,15 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_margin="10dp"
+            android:background="@android:color/transparent"
             android:drawableLeft="@drawable/ic_baseline_phone_24"
             android:drawablePadding="10dp"
             android:drawableTint="@color/main_color"
-            android:textColorHint="@color/main_color"
-            android:background="@android:color/transparent"
             android:hint="Phone Number"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:textColorHint="@color/main_color" />
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/emailfieldCont"
         android:layout_width="match_parent"
@@ -83,13 +85,13 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_margin="10dp"
+            android:background="@android:color/transparent"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="10dp"
             android:drawableTint="@color/main_color"
-            android:textColorHint="@color/main_color"
-            android:background="@android:color/transparent"
             android:hint="Email"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColorHint="@color/main_color" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -107,14 +109,15 @@
             android:id="@+id/passwdfield"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
             android:drawableLeft="@drawable/ic_baseline_paswd_eye_24"
             android:drawablePadding="10dp"
             android:drawableTint="@color/main_color"
-            android:textColorHint="@color/main_color"
-            android:layout_margin="10dp"
-            android:background="@android:color/transparent"
-            android:hint="Enter Password" />
+            android:hint="Enter Password"
+            android:textColorHint="@color/main_color" />
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/rptpswdCont"
         android:layout_width="match_parent"
@@ -130,13 +133,13 @@
             android:id="@+id/rptpswdfield"
             android:layout_width="match_parent"
             android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/transparent"
             android:drawableLeft="@drawable/ic_baseline_paswd_eye_24"
             android:drawablePadding="10dp"
             android:drawableTint="@color/main_color"
-            android:textColorHint="@color/main_color"
-            android:layout_margin="10dp"
-            android:background="@android:color/transparent"
-            android:hint="Repeat Password" />
+            android:hint="Repeat Password"
+            android:textColorHint="@color/main_color" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -145,7 +148,7 @@
         android:layout_height="50dp"
         android:layout_below="@id/rptpswdCont"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:layout_marginRight="25dp"
         app:cardBackgroundColor="@color/main_color"
         app:cardCornerRadius="25dp"
@@ -161,33 +164,127 @@
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signupbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/fbLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="15dp"
+                android:paddingTop="5dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="5dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_facebook_app_symbol"
+                    app:tint="@color/paytm_dark_blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sn_bold"
+                    android:text="Facebook"
+                    android:textColor="@color/paytm_dark_blue"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/googleLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingTop="5dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="5dp"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_google" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sn_bold"
+                    android:text="Google"
+                    android:textColor="#db4a39"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/dont_have_acc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/logintxt"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/main_color"
         android:text="Already have an account?"
+        android:textColor="@color/main_color"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/logintxt"
         android:layout_width="wrap_content"
-        android:textColor="@color/gray_dark"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="25dp"
         android:text="Log In"
+        android:textColor="@color/gray_dark"
         android:textSize="18sp"
         android:textStyle="bold" />
+
     <ProgressBar
         android:id="@+id/progressbar"
-        android:elevation="3dp"
         android:layout_width="50dp"
-        android:visibility="gone"
         android:layout_height="50dp"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:elevation="3dp"
+        android:visibility="gone" />
 
 </RelativeLayout>

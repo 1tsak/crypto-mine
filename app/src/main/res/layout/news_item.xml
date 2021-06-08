@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView
+    android:id="@+id/newsCont"
+    android:layout_width="match_parent"
+    app:cardUseCompatPadding="true"
+    android:padding="5dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/newsImg"
+            android:layout_centerVertical="true"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+
+        <TextView
+            android:id="@+id/newstittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_toRightOf="@id/newsImg"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/sn_regular"
+            android:text="Daily Mining"/>
+        <TextView
+            android:id="@+id/newstime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/ic_baseline_access_time_24"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/sn_nl"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:text="01 Jan 1000"/>
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
+</RelativeLayout>

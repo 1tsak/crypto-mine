@@ -2,6 +2,6 @@
 <network-security-config>
     <base-config cleartextTrafficPermitted="true" />
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">https://codebazar.in</domain>
+        <domain includeSubdomains="true">http://nincoin.org/miner/</domain>
     </domain-config>
 </network-security-config>

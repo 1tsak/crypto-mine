@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.oadev.mining"
-        minSdkVersion 18
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -43,17 +43,21 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:26.1.0')
     // Declare the dependency for the Firebase Authentication library
     implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-analytics'
     // Volley Dependency
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'androidx.browser:browser:1.2.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
     // retrofit library
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     // Retrofit API Interceptor for Debuging
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.0.1'
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.1"))
     // paytm all in one sdk
     implementation 'com.paytm.appinvokesdk:appinvokesdk:1.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

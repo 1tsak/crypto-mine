@@ -14,20 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bidding"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ReferActivity"></activity>
+        <activity android:name=".WhitePagesActivity"></activity>
+        <activity android:name=".NewsActivity" />
+        <activity android:name=".ReferActivity" />
         <activity android:name=".WithdrawActivity" />
         <activity android:name=".AddMoneyActivity" />
         <activity android:name=".PhoneAuthActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".SplashActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+
+        <service android:name=".BroadcastService" />
     </application>
 
 </manifest>

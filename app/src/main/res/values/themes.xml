@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Bidding" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/bg_color</item>
-        <item name="colorPrimaryVariant">@color/bg_color</item>
-        <item name="colorOnPrimary">@color/bg_color</item>
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryVariant">@color/main_color_dark</item>
+        <item name="colorOnPrimary">@color/main_color</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/primary_color</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
