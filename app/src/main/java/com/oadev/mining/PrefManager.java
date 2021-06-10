@@ -19,6 +19,8 @@ public class PrefManager {
     private static final String KEY_AMOUNT = "keyamount";
     private static final String KEY_ID = "keyuserid";
     private static final String KEY_PHONE = "keyphone";
+    private static final String KEY_REFER = "keyrefer";
+    private static final String KEY_REFERER = "keyreferer";
 
     private static PrefManager mInstance;
     private static Context mCtx;
@@ -44,6 +46,8 @@ public class PrefManager {
         editor.putString(KEY_EMAIL, user.getEmail());
         editor.putString(KEY_AMOUNT, user.getAmount());
         editor.putString(KEY_PHONE, user.getPhone());
+        editor.putString(KEY_REFER, user.getRefercode());
+        editor.putString(KEY_REFERER, user.getReferedby());
         editor.apply();
     }
 
@@ -68,8 +72,9 @@ public class PrefManager {
                 sharedPreferences.getString(KEY_USERNAME, null),
                 sharedPreferences.getString(KEY_EMAIL, null),
                 sharedPreferences.getString(KEY_AMOUNT, null),
-                sharedPreferences.getString(KEY_PHONE, null)
-        );
+                sharedPreferences.getString(KEY_PHONE, null),
+                sharedPreferences.getString(KEY_REFER, null),
+                sharedPreferences.getString(KEY_REFERER, null));
     }
 
     //this method will logout the user

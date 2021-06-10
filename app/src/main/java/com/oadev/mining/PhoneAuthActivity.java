@@ -215,8 +215,8 @@ public class PhoneAuthActivity extends AppCompatActivity {
                                         userobject.getString("name"),
                                         userobject.getString("email"),
                                         userobject.getString("amount"),
-                                        userobject.getString("password")
-                                );
+                                        userobject.getString("password"),
+                                        "refercode", userobject.getString("referedby"), referedby1);
                                 PrefManager.getInstance(PhoneAuthActivity.this).userLogin(user);
                                 finish();
                                 startActivity(new Intent(PhoneAuthActivity.this, MainActivity.class));

@@ -6,4 +6,10 @@ public class Config {
     public static String signupUrl = BASE_URL + "signup.php?";
     public static String functionUrl = BASE_URL + "function.php?";
     public static String paytmMID = "";
+
+    public static float storedamount;
+
+    public static String referedby;
+
+    public static boolean isTimerRunning = false;
 }

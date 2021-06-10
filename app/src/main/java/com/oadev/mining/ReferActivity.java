@@ -31,7 +31,7 @@ public class ReferActivity extends AppCompatActivity {
         refId = findViewById(R.id.referId);
         copyRefBtn = findViewById(R.id.copyRefbtn);
         user = PrefManager.getInstance(this).getUser();
-        refId.setText(user.getUsername());
+        refId.setText(user.getRefercode());
         closeScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,8 +51,7 @@ public class ReferActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(android.content.Intent.ACTION_SEND);
-                String shareBody = "Here is My Refer Code For NiN Mining Network"+" "+user.getUsername()+" "+"https://play.google.com/store/apps/details?id="+getPackageName()
-                        ;
+                String shareBody = "Here is My Refer Code For NiN Mining Network"+" "+user.getUsername()+" "+"https://play.google.com/store/apps/details?id="+getPackageName();
                 intent.setType("text/plain");
                 intent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(intent, "Share With"));

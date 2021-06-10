@@ -173,8 +173,9 @@ public class LoginActivity extends AppCompatActivity {
                                         userobject.getString("name"),
                                         userobject.getString("email"),
                                         userobject.getString("amount"),
-                                        userobject.getString("password")
-                                );
+                                        userobject.getString("password"),
+                                        userobject.getString("refercode"),
+                                        userobject.getString("referedby"));
                                 PrefManager.getInstance(LoginActivity.this).userLogin(user);
                                 progressBar.setVisibility(View.GONE);
                                 finish();

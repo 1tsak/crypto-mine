@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Bidding"
         android:usesCleartextTraffic="true">
-        <activity android:name=".WhitePagesActivity"></activity>
+        <activity android:name=".RolesActivity"></activity>
+        <activity android:name=".WhitePagesActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".ReferActivity" />
         <activity android:name=".WithdrawActivity" />
@@ -22,6 +23,7 @@
         <activity android:name=".PhoneAuthActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
+        <activity android:name=".ReferDialog"/>
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +34,16 @@
         <activity android:name=".MainActivity" />
 
         <service android:name=".BroadcastService" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>

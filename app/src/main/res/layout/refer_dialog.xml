@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <TextView
+        android:id="@+id/titleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:fontFamily="@font/sn_bold"
+        android:letterSpacing="0.01"
+        android:text="Refer Screen"
+        android:textColor="@color/gray_dark"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/referer_lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTxt"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:paddingBottom="25dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:paddingBottom="25dp">
+
+            <ImageButton
+                android:id="@+id/close_dialog"
+                android:layout_width="35dp"
+                android:layout_height="@dimen/dimen_35dp"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:background="@color/none"
+                android:src="@drawable/ic_baseline_close_24"
+                android:tint="@color/gray_dark" />
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="25dp"
+                android:src="@drawable/ic_gift_box" />
+
+
+            <EditText
+                android:id="@+id/refEditText"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/logo"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_corner_border"
+                android:hint="Enter Refer Code"
+                android:textAlignment="center"
+                android:textColor="@color/gray_dark"
+                android:textSize="20sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/submit"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/dimen_50dp"
+                android:layout_below="@id/refEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                app:cardBackgroundColor="#03A9F4"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/sn_sembold"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/infotxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/referer_lyt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/sn_nl"
+        android:textAlignment="center"
+        android:letterSpacing="0.01"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:text="Enter Refer Code You Will Get Instant 50 NiN Coins In Your Wallet"
+        android:textColor="@color/gray_dark"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+</RelativeLayout>

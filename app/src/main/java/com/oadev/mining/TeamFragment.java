@@ -32,7 +32,7 @@ public class TeamFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_team, container, false);
         inviteuser = view.findViewById(R.id.invite_user);
         balanceView = view.findViewById(R.id.balanceview);
-        float amount = ((MainActivity)getActivity()).amount;
+        float amount = Config.storedamount;
         balanceView.setText(String.valueOf(amount));
         inviteuser.setOnClickListener(new View.OnClickListener() {
             @Override

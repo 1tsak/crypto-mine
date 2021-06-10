@@ -51,7 +51,7 @@ public class HistoryFragment extends Fragment {
         user = PrefManager.getInstance(getActivity()).getUser();
         hsmodel = new ArrayList<HistoryModel>();
         fetchdata();
-        float amount = ((MainActivity)getActivity()).amount;
+        float amount = Config.storedamount;
         totalBalance.setText(String.valueOf(amount));
 //        if(hsmodel.isEmpty()){
 //            empty.setVisibility(View.VISIBLE);

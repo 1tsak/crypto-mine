@@ -1,10 +1,16 @@
 package com.oadev.mining;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,22 +25,37 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class FragmentHome extends Fragment {
+    public String datetime, currentdatetime;
+    public ProgressBar progressBar;
+    public float currentamount, amount;
+    public float storedamount;
+    public String miningstatus;
     CardView start_refer;
-    TextView countdown,availableCoin;
+    TextView countdown, availableCoin;
     long countdownTime;
+    ImageButton referCodeButton;
     CardView start_mine;
     View view;
     ArrayList<NewsModel> newsModels;
     RecyclerView recyclerView;
+    float ninfactor = 0.000556f;
+    User user;
+    RequestQueue requestQueue;
 
     @Override
 
@@ -50,6 +71,14 @@ public class FragmentHome extends Fragment {
         bindviews(view);
         setListener();
         newsModels = new ArrayList<NewsModel>();
+        progressBar = new ProgressBar(getActivity());
+
+        user = PrefManager.getInstance(getActivity()).getUser();
+
+        float amount = Config.storedamount;
+        availableCoin.setText(String.valueOf(amount));
+        requestQueue = Volley.newRequestQueue(getActivity());
+        getNews();
         fetchdata();
 
 
@@ -57,20 +86,27 @@ public class FragmentHome extends Fragment {
     }
 
 
-
     private void setListener() {
         start_refer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity) getActivity()).startActivity(new Intent(getActivity(),ReferActivity.class));
+                ((MainActivity) getActivity()).startActivity(new Intent(getActivity(), ReferActivity.class));
             }
         });
 
         start_mine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                getActivity().startService(new Intent(getActivity(), BroadcastService.class));
                 startMine();
+            }
+        });
+
+        referCodeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ReferDialog.class);
+                intent.putExtra("referer", Config.referedby);
+                startActivity(intent);
             }
         });
 
@@ -78,7 +114,186 @@ public class FragmentHome extends Fragment {
 
     private void startMine() {
 
-        ((MainActivity)getActivity()).setCountdownTime();
+        turnOnMining();
+    }
+    public void updateCountdownUI() {
+
+        long countdownTime = getTimeDiff();
+        currentamount = (86400 - (countdownTime / 1000)) * ninfactor;
+        amount += currentamount;
+
+        if (countdownTime > 0) {
+            new CountDownTimer(countdownTime, 1000) {
+                public void onTick(long millisUntilFinished) {
+                    // Used for formatting digit to be in 2 digits only
+                    Config.isTimerRunning = true;
+                    NumberFormat f = new DecimalFormat("00");
+                    long hour = (millisUntilFinished / 3600000) % 24;
+                    long min = (millisUntilFinished / 60000) % 60;
+                    long sec = (millisUntilFinished / 1000) % 60;
+                    countdown.setText(f.format(hour) + ":" + f.format(min) + ":" + f.format(sec));
+                    amount += ninfactor;
+                    availableCoin.setText(String.valueOf(amount));
+                    start_mine.setCardBackgroundColor(Color.parseColor("#4ea64e"));
+                    Log.d("akbros", f.format(hour) + ":" + f.format(min) + ":" + f.format(sec));
+
+                }
+
+                public void onFinish() {
+                    //updateCoinAmount(String.valueOf(amount));
+                    start_mine.setCardBackgroundColor(Color.parseColor("#FF3E3E"));
+                    switchMine("Daily_Mining","0","miningoff");
+
+                }
+            }.start();
+        } else {
+            if (miningstatus.equals("1")){
+                Toast.makeText(getActivity(), "Session Finished!, Click Mine to Start Again.", Toast.LENGTH_LONG).show();
+                switchMine("Daily_Mining","0","miningoff");
+            }
+
+
+            availableCoin.setText(String.valueOf(Config.storedamount));
+
+        }
+
+    }
+    private void switchMine(String tittle,String status, String method) {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.functionUrl + "method=" + method + "&userid=" + user.getId() + "&tittle=" + tittle + "&status" + status,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        progressBar.setVisibility(View.GONE);
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            if (!jsonObject.getBoolean("error")) {
+                                JSONObject userobject = jsonObject.getJSONObject("data");
+                                fetchdata();
+                                Toast.makeText(getActivity(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+
+                            } else
+                                Toast.makeText(getActivity(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(getActivity(), "Something Went Wrong!", Toast.LENGTH_LONG).show();
+                error.printStackTrace();
+            }
+        });
+
+        requestQueue.add(stringRequest);
+    }
+    public void turnOnMining() {
+        long timediff = getTimeDiff();
+        if (timediff < 0) {
+            Log.d("userid", String.valueOf(user.getId()));
+//
+//            StringRequest stringRequest = new StringRequest(Request.Method.GET,Config.functionUrl + "method=" + "updateminingstatus" + "&userid=" + user.getId(),
+//                    new Response.Listener<String>() {
+//                        @Override
+//                        public void onResponse(String response) {
+//                            progressBar.setVisibility(View.GONE);
+//                            try {
+//                                JSONObject jsonObject = new JSONObject(response);
+//                                if (!jsonObject.getBoolean("error")) {
+//                                    JSONObject userobject = jsonObject.getJSONObject("data");
+//                                    amount = Float.parseFloat(userobject.getString("amount"));
+//
+//                                    Toast.makeText(MainActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+            switchMine("Daily_Mining","1","miningon");
+
+
+//                                } else
+//                                    Toast.makeText(MainActivity.this, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                            }
+//                        }
+//                    }, new Response.ErrorListener() {
+//                @Override
+//                public void onErrorResponse(VolleyError error) {
+//                    progressBar.setVisibility(View.GONE);
+//                    Toast.makeText(MainActivity.this, "Something Went Wrong!", Toast.LENGTH_LONG).show();
+//                    error.printStackTrace();
+//                }
+//            });
+//
+//            requestQueue.add(stringRequest);
+
+        } else {
+            Toast.makeText(getActivity(), "Mining In Progress!", Toast.LENGTH_LONG).show();
+        }
+
+    }
+    private void fetchdata() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.functionUrl + "method=" + "getdata" + "&userid=" + user.getId(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        progressBar.setVisibility(View.GONE);
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            if (!jsonObject.getBoolean("error")) {
+                                JSONObject userobject = jsonObject.getJSONObject("data");
+                                // Parse the input date
+                                SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                Date inputDate = fmt.parse(userobject.getString("minetime"));
+                                fmt = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+                                datetime = fmt.format(inputDate);
+
+                                amount = Float.parseFloat(userobject.getString("amount"));
+                                Config.storedamount = Float.parseFloat(userobject.getString("amount"));
+                                Config.referedby = userobject.getString("referedby");
+                                miningstatus = userobject.getString("mining");
+                                if (!Config.isTimerRunning) {
+                                    updateCountdownUI();
+                                }
+
+                            } else
+                                Toast.makeText(getActivity(), jsonObject.getString("message"), Toast.LENGTH_LONG).show();
+                        } catch (JSONException | ParseException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(getActivity(), "Something Went Wrong!", Toast.LENGTH_LONG).show();
+                error.printStackTrace();
+            }
+        });
+
+        requestQueue.add(stringRequest);
+    }
+    public long getTimeDiff() {
+        SimpleDateFormat fmt;
+        fmt = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+        currentdatetime = fmt.format(new Date());
+        Log.d("akbros", currentdatetime);
+        long difference = 00;
+        try {
+            Date date1 = fmt.parse(datetime);
+            Date date2 = fmt.parse(currentdatetime);
+            difference = date1.getTime() - date2.getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Log.d("akbros", String.valueOf(difference));
+        return difference;
+
+    }
+    public void LogOut() {
+        PrefManager.getInstance(getActivity()).logout();
+        FirebaseAuth.getInstance().signOut();
+        Toast.makeText(getActivity(), "Logged Out Successfully!", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getActivity(), LoginActivity.class));
+
     }
 
     private void bindviews(View view) {
@@ -86,19 +301,23 @@ public class FragmentHome extends Fragment {
         countdown = view.findViewById(R.id.mine_timer);
         availableCoin = view.findViewById(R.id.available_coin);
         recyclerView = view.findViewById(R.id.newsRecycler);
-        start_mine= view.findViewById(R.id.start_mine);
+        start_mine = view.findViewById(R.id.start_mine);
+        referCodeButton = view.findViewById(R.id.refeOption);
     }
-    public TextView getCountdownView(){
+
+    public TextView getCountdownView() {
         return countdown;
     }
-    public TextView getAvailableCoinView(){
-        return availableCoin;
+
+    public void setAvailableCoinView(String amount) {
+        availableCoin.setText(amount);
     }
-    public CardView getStart_mineView(){
+
+    public CardView getStart_mineView() {
         return start_mine;
     }
-    private void fetchdata() {
-        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+
+    private void getNews() {
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Config.functionUrl + "method=" + "getnews",
@@ -130,7 +349,7 @@ public class FragmentHome extends Fragment {
                                 }
 
 
-                                NewsAdapter adapter = new NewsAdapter(newsModels,getActivity());
+                                NewsAdapter adapter = new NewsAdapter(newsModels, getActivity());
                                 recyclerView.setHasFixedSize(true);
                                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                                 recyclerView.setAdapter(adapter);
