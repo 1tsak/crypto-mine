@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".TeamFragment">
+    tools:context=".fragment.TeamFragment">
 
     <TextView
         android:id="@+id/titleTxt"
@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dimen_10dp"
         android:layout_marginTop="25dp"
+        android:fontFamily="@font/sn_bold"
         android:text="Earning Team"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:fontFamily="@font/sn_bold"
         android:textStyle="bold" />
 
     <TextView
@@ -26,11 +26,11 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/dimen_10dp"
         android:drawableLeft="@drawable/ic_baseline_access_time_24"
-        android:text="100.005"
-        android:gravity="center"
-        android:drawableTint="@color/black"
         android:drawablePadding="2dp"
+        android:drawableTint="@color/black"
         android:fontFamily="@font/sn_bold"
+        android:gravity="center"
+        android:text="100.005"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -46,29 +46,30 @@
         <ImageView
             android:id="@+id/logo_tm"
             android:layout_width="45dp"
-            android:padding="10dp"
-            android:background="@drawable/circular_bg"
-            android:src="@drawable/ic_baseline_group_24"
             android:layout_height="45dp"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:background="@drawable/circular_bg"
+            android:padding="10dp"
+            android:src="@drawable/ic_baseline_group_24" />
 
         <TextView
             android:id="@+id/teamTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/sn_regular"
             android:layout_toEndOf="@id/logo_tm"
+            android:fontFamily="@font/sn_regular"
             android:text="Your Earning Team Has"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/membercount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sn_regular"
             android:layout_below="@id/teamTxt"
             android:layout_toEndOf="@id/logo_tm"
+            android:fontFamily="@font/sn_regular"
             android:text="0 Member (s)"
             android:textColor="@color/main_color"
             android:textSize="16sp" />
@@ -77,9 +78,11 @@
 
 
     <RelativeLayout
+        android:id="@+id/actv_lyt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/team_lyt"
+        android:layout_marginBottom="@dimen/dimen_10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/rounded_corner_border">
@@ -87,12 +90,12 @@
         <ImageView
             android:id="@+id/logo_cm"
             android:layout_width="@dimen/dimen_50dp"
-            android:padding="15dp"
-            android:fontFamily="@font/sn_regular"
-            android:background="@drawable/circular_bg"
-            android:src="@drawable/ic_pick"
             android:layout_height="@dimen/dimen_50dp"
             android:layout_margin="10dp"
+            android:background="@drawable/circular_bg"
+            android:fontFamily="@font/sn_regular"
+            android:padding="15dp"
+            android:src="@drawable/ic_pick"
             app:tint="#5E5E5E" />
 
         <TextView
@@ -100,8 +103,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/sn_regular"
             android:layout_toEndOf="@id/logo_cm"
+            android:fontFamily="@font/sn_regular"
             android:text="Currently Minning"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -110,13 +113,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/cmTxt"
-            android:fontFamily="@font/sn_regular"
             android:layout_toEndOf="@id/logo_cm"
+            android:fontFamily="@font/sn_regular"
             android:text="0 Member (s)"
             android:textColor="@color/main_color"
             android:textSize="16sp" />
 
     </RelativeLayout>
+    <TextView
+        android:id="@+id/title2Txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_below="@id/actv_lyt"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/sn_bold"
+        android:text="Team"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/team_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title2Txt"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:layout_above="@id/invite_user"
+        android:visibility="visible" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/invite_user"

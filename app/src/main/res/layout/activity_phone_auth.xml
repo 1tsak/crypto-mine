@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhoneAuthActivity">
+    tools:context=".activity.PhoneAuthActivity">
 
     <ImageButton
         android:id="@+id/backbtn"
@@ -40,7 +40,7 @@
         android:src="@drawable/otp_alert"
         app:tint="#7986CB" />
 
-    <com.oadev.mining.OtpEditText
+    <com.oadev.mining.utility.OtpEditText
         android:id="@+id/et_otp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

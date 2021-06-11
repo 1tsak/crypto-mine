@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentHome">
+    tools:context=".fragment.FragmentHome">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -82,8 +82,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sn_regular"
                     android:padding="10dp"
-                    android:text="24:00:00"
-                    android:textColor="@color/light_blue"
+                    android:text="00:00:00"
+                    android:textColor="#000"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </LinearLayout>

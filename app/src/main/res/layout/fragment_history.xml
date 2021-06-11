@@ -1,89 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipeToRefresh"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".HistoryFragment">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tittle_txt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/dimen_10dp"
-        android:fontFamily="@font/sn_regular"
-        android:text="Transaction History"
-        android:textColor="@color/black_222222"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/balance_lyt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tittle_txt"
-        android:layout_margin="10dp"
-        app:cardBackgroundColor="#F3202020"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="6dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical">
-
-            <TextView
-                android:id="@+id/total_balancelbl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:text="Total Balance"
-                android:fontFamily="@font/sn_bold"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/total_balance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/total_balancelbl"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="25dp"
-                android:text="100.005"
-                android:padding="@dimen/dimen_10dp"
-                android:layout_centerVertical="true"
-                android:fontFamily="@font/sn_bold"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/history_recycler"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/balance_lyt"
-        android:layout_margin="5dp"
-        android:visibility="visible" />
+        android:background="@color/white"
+        tools:context=".fragment.HistoryFragment">
 
-    <TextView
-        android:id="@+id/no_item"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Empty!"
-        android:textColor="@color/gray_dark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        <TextView
+            android:id="@+id/tittle_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:fontFamily="@font/sn_regular"
+            android:text="Transaction History"
+            android:textColor="@color/black_222222"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/balance_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tittle_txt"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#F3202020"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="6dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/total_balancelbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:fontFamily="@font/sn_bold"
+                    android:text="Total Balance"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/total_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/total_balancelbl"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="25dp"
+                    android:fontFamily="@font/sn_bold"
+                    android:padding="@dimen/dimen_10dp"
+                    android:text="100.005"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
 
-</RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/history_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/balance_lyt"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/no_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Empty!"
+            android:textColor="@color/gray_dark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/newsCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="10dp"
+                android:id="@+id/image_lyt"
+                android:elevation="10dp">
+
+                <ImageView
+                    android:id="@+id/teamImg"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/placeholder_img"
+                    android:layout_centerVertical="true" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/teamtittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/image_lyt"
+                android:fontFamily="@font/sn_regular"
+                android:text="Daily Mining"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/team_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/teamtittle"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/image_lyt"
+                android:drawableLeft="@drawable/ic_baseline_brightness_1_24"
+                android:drawableTint="@color/red"
+                android:scaleY="0.5"
+                android:scaleX="0.5"
+                android:drawablePadding="5dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/sn_regular"
+                android:textColor="@color/red"
+                android:text="Inactive"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

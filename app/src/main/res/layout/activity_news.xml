@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="viewStart"
-    tools:context=".NewsActivity">
+    tools:context=".activity.NewsActivity">
 
     <ImageView
         android:id="@+id/banner_img"

@@ -505,7 +505,7 @@
             <RelativeLayout
                 android:id="@+id/whitepaperLyt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:padding="5dp"
                 android:layout_below="@id/title3Txt"
                 android:background="@drawable/layout_border">
@@ -530,7 +530,7 @@
             <RelativeLayout
                 android:id="@+id/rolesLyt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:padding="5dp"
                 android:layout_below="@id/whitepaperLyt"
                 android:background="@drawable/layout_border">
@@ -555,7 +555,7 @@
             <RelativeLayout
                 android:id="@+id/contactUsLyt"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_below="@id/rolesLyt"
                 android:padding="5dp"
                 android:background="@drawable/layout_border">
@@ -581,7 +581,7 @@
                 android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:padding="5dp"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_below="@id/contactUsLyt"
                 android:background="@drawable/layout_border">
 
